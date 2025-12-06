@@ -46,10 +46,12 @@ fetch(url)
 //tomato.forEach(item => {
  // output += `${item.Source}: ${item.Value} <br> `;
 //});
-
+movieOutput.classList.add("bg-light");
 
       // Display results
       movieOutput.innerHTML =
+    //  "<i class='bi bi-film'></i><br> <br>" +
+   
         "<h3>" + name + "</h3>" +
         "<p>Year: " + year + "</p>" +
         "<p>Plot: " + plot + "</p>" +
@@ -60,9 +62,6 @@ fetch(url)
        // "<p>" +tomato + "</p>"+
        "<p><img src='https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg' style='width:25px;'>"  +  tomato2 + "</p>"+
         "<img src=" + poster + ">";
-
-
-
    });
 
 }
@@ -99,32 +98,36 @@ ingredients.forEach(item => {
  //console.log(ingredients[i].name);
 //}
 //container.innerHTML = output;
-
+recipeOutput.classList.add("bg-light");
 
       // Display results
      recipeOutput.innerHTML =
-      "<h3>" + name + "</h3>" +
+//"<i class='bi bi-fork-knife'></i><br> <br>" + 
+      "<h4>" + name + "</h4>" +
       "<p>Ingredients: <br><br> " + output + "</p>" +
         "<p>Instructions: <br><br> " + summary + "</p>" +
        
       //  "<p>Starring: " + actors + "</p>" +
       //  "<p>Genre: " + genre + "</p>" +
       //  "<p>Rated: " + rating + "</p>"+
-        "<img src=" + image + ">" +
-        "<a href=" + url + ">Click here for Original Recipe</a>";
+
+      "<img src='" + image + "' style='width:350px; height: auto;'>" +
+      "<a href='" + url + " 'target='_blank'>Click here for Original Recipe</a>";
 
    });
 
 }
+
+
   
-
-
 searchBtn.addEventListener("click", function () {
   const movieName = movieInput.value.trim();
   
 searchBtn.addEventListener("click", getRandomRecipe); 
 
-console.log(movieName);
+
+
+//console.log(movieName);
 //console.log(getRandomRecipe);
 
   if (movieName === "") {
@@ -133,6 +136,9 @@ console.log(movieName);
     return;
   }
 
- getCurrentMovie(movieName);
- getRandomRecipe();
+
+
+getCurrentMovie(movieName);
+getRandomRecipe();
 });
+
